@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Sensors Data Collector</string>
+    <string name="main_no_items">No sensors</string>
+    <string name="questions_no_items">No questions</string>
+    <string name="settings_capture">Capture</string>
+    <string name="settings_rate">Sampling rate (in minutes):</string>
+    <string name="menu_settings">Settings</string>
+    <string name="textview_sampling">recording</string>
+</resources>

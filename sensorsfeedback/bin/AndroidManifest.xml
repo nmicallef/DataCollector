@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+      package="aexp.sensorsfeedback"
+      android:versionCode="1"
+      android:versionName="1.0">
+
+
+    <application android:icon="@drawable/icon" android:label="@string/app_name">
+        <activity android:name=".Sensors"
+                  android:label="@string/app_name">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".SensorMonitor"/>
+        <activity android:name=".SensorSettings"/>
+        <service android:enabled="true" android:name=".SamplingService"/>
+        <service android:enabled="true" android:name=".AutonomousService" />
+        <service android:enabled="true" android:name=".HeartBeat"/>
+        <service android:enabled="true" android:name=".Wifi"/>
+        <service android:enabled="true" android:name=".Noise"/>
+        <service android:enabled="true" android:name=".PicLight"/>
+        <service android:enabled="true" android:name=".FilesUploader"/>
+        <service android:enabled="true" android:name=".AccelerometerAnalysis"/>
+        <service android:enabled="true" android:name=".BatteryLevel"/>
+        <service android:enabled="true" android:name=".WifiDayAnalyzer"/>
+        <service android:enabled="true" android:name=".RunningApplications"/>
+        <service android:enabled="true" android:name=".MagneticField"/>
+        <service android:enabled="true" android:name=".Light"/>
+        <service android:enabled="true" android:name=".Lightv3"/>
+        <service android:enabled="true" android:name=".Accelerometer"/>
+        <service android:enabled="true" android:name=".Rotation"/>
+        <service android:enabled="true" android:name=".Sound"/>
+        <service android:enabled="true" android:name=".Noisev2"/>
+        <service android:enabled="true" android:name=".DailyAnalysis"/>
+        <service android:enabled="true" android:name=".ReminderService"/>
+        <service android:enabled="true" android:name=".GPS"/>
+        <receiver
+    		android:name=".StartMyServiceAtBootReceiver"
+    		android:enabled="true"
+    		android:exported="true"
+    		android:label="StartMyServiceAtBootReceiver">
+    		<intent-filter>
+        		<action android:name="android.intent.action.BOOT_COMPLETED" />
+    		</intent-filter>
+		</receiver> 
+        <receiver android:name=".SensorsWidgetProvider" android:label="SensorsFeedback widget 1">
+		  <intent-filter>
+			<action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+ 		 </intent-filter>
+  		 <meta-data android:name="android.appwidget.provider" android:resource="@xml/widget1_info" />
+		</receiver>
+		
+    </application>
+     <uses-permission android:name="android.permission.WAKE_LOCK" />
+     <uses-permission android:name="android.permission.GET_TASKS"/> 
+     <uses-permission android:name="android.permission.INTERNET" />
+     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/> 
+     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/> 
+     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/> 
+     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+     <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+     <uses-permission android:name="android.permission.RECORD_AUDIO" />
+     <uses-permission android:name="android.permission.CAMERA" />
+     <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
+     <uses-permission android:name="android.permission.WRITE_INTERNAL_STORAGE" />
+     <uses-permission android:name="android.permission.VIBRATE" />
+     
+     
+</manifest>
